@@ -1,1 +1,2 @@
-angular pro
+## angular pro
+ng install
