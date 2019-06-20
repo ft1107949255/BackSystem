@@ -1,0 +1,81 @@
+<p-table #dt [value]="tablelist.body" [columns]="selectedColumns" [paginator]="true" [rows]="15"
+  [(selection)]="selectedList" dataKey="username" [scrollable]="true" scrollHeight="500px">
+  <ng-template pTemplate="caption">
+    <div style="text-align:left" style="display: flex; align-items:center;">
+      <button type="button" pButton label="添加" (click)="add()" style="float:left"></button>
+    </div>
+  </ng-template>
+  <ng-template pTemplate="header" let-columns>
+    <tr>
+      <!-- <th style="width: 3em">
+        <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+      </th> -->
+      <th *ngFor="let item of columns" [pSortableColumn]="item.field">{{item.value}}<p-sortIcon [field]="item.field"
+          ariaLabel="Activate to sort" ariaLabelDesc="Activate to sort in descending order"
+          ariaLabelAsc="Activate to sort in ascending order"></p-sortIcon>
+      </th>
+      <!-- <th>
+        启用
+      </th>
+      <th>
+          操作
+        </th> -->
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-rowData let-columns="columns">
+    <tr [pSelectableRow]="rowData">
+      <!-- <td style="width: 3em">
+        <p-tableCheckbox [value]="rowData"></p-tableCheckbox>
+      </td> -->
+      <td *ngFor="let label of columns">
+        <!-- {{label.field}} -->
+        <p-inputSwitch *ngIf="label.field == 'userful'" (onChange)="handleChange($event)"
+          [(ngModel)]="rowData[label.field]"></p-inputSwitch>
+        <button *ngIf='label.field == "deal"' type="button" pButton (click)="del()" label="删除"
+          class="ui-button-raised ui-button-danger"></button>
+        <span
+          *ngIf='label.field != "deal" && label.field != "userful"'>{{rowData[label.field]== ''? '/' : rowData[label.field]}}</span>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>
+
+<p-toast position="center" key="c" (onClose)="onReject()" [modal]="true" [baseZIndex]="5000">
+  <ng-template let-message pTemplate="message">
+    <div style="text-align: center">
+      <i class="pi pi-exclamation-triangle" style="font-size: 3em"></i>
+      <h3>{{message.summary}}</h3>
+      <p>{{message.detail}}</p>
+    </div>
+    <div class="ui-g ui-fluid">
+      <div class="ui-g-6">
+        <button type="button" pButton (click)="onConfirm()" label="确认" class="ui-button-success"></button>
+      </div>
+      <div class="ui-g-6">
+        <button type="button" pButton (click)="onReject()" label="取消" class="ui-button-secondary"></button>
+      </div>
+    </div>
+  </ng-template>
+</p-toast>
+
+<p-dialog header="添加用户" [(visible)]="display" [modal]="true" [baseZIndex]="10000" [responsive]="true"
+  [style]="{width: '300px', minHeight: '300px'}">
+  <form #heroForm="ngForm">
+    <div class="form_div">
+      <span>用户名 :</span><input type="text" pInputText placeholder="用户名" class="form-control input-medium" required
+        [(ngModel)]="username" (ngModelChange)="username=$event" name="username">
+        <i class="pi pi-times color" *ngIf='usernameShow' ></i>
+    </div>
+    <div class="form_div">
+      <span>密&nbsp;&nbsp;&nbsp;&nbsp;码 :</span><input type="password" pInputText placeholder="密码" class="form-control input-medium" required
+        [(ngModel)]="pwd" (ngModelChange)="pwd=$event" name="pwd">
+        <i class="pi pi-times color" *ngIf='pwdShow'></i>
+    </div>
+    <div class="form_div">
+      <span>邮&nbsp;&nbsp;&nbsp;&nbsp;箱 :</span><input type="text" pInputText placeholder="邮箱" class="form-control input-medium" required
+        [(ngModel)]="email" (ngModelChange)="email=$event" name="email">
+        <i class="pi pi-times color" *ngIf='emailShow'></i>
+    </div>
+    <button type="submit" tabindex="4" class="btn btn-primary" (click)='submit()'>提交</button>
+  </form>
+</p-dialog>

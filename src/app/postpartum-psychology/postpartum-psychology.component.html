@@ -1,0 +1,14 @@
+
+<div class="tab">
+  <p-fieldset >
+    <p-header>产后心理指标</p-header>
+    <p-tabMenu [model]="items" [activeItem]="items[0]"></p-tabMenu>
+    <div class="tablelist1" *ngIf='tab1'>
+      <app-table [tablelist] = tablelist1></app-table>
+    </div>
+    <div class="tablelist2" *ngIf='tab2'>
+      <app-table [tablelist] = tablelist2></app-table>
+    </div>
+  </p-fieldset>
+</div>
+

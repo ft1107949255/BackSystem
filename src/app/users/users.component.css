@@ -1,0 +1,21 @@
+.title{
+    font-size: 14px;
+    margin-left: 10px;
+}
+.search{
+    margin: 20px 0px ;
+}
+:host ::ng-deep .ui-float-label{
+    display: inline-block;
+    margin: 0px 10px;
+}
+:host ::ng-deep .ui-inputtext{
+    color:black;
+    font-size: 14px;
+}
+:host ::ng-deep .ui-float-label>label{
+    font-size: 14px;
+}
+.user-container{
+    padding-left: 10px;
+}

@@ -1,0 +1,37 @@
+.search{
+    height: 40px;
+    /* line-height: 40px; */
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    padding-left:40px;
+    margin: 20px 0px; 
+}
+.search span{
+    margin-right: 10px;
+}
+:host ::ng-deep .search button{
+    margin-left: 10px;
+}
+:host ::ng-deep .ui-tabmenuitem{
+    background: #f4f4f4;
+    font-size: 12px;
+}
+:host ::ng-deep .ui-tabmenu .ui-state-active{
+    background-color: #007ad9 !important;
+    border: 1px solid #007ad9 !important;
+    
+}
+:host ::ng-deep .ui-tabmenu .ui-state-active a{
+    color: white !important;
+}
+.tab{
+    margin-top: 10px;
+    /* padding-left: 20px; */
+}
+.tablelist1, .tablelist2, .tablelist3 {
+    margin: 10px 0px 40px 0px ;
+}
+.tab-table{
+    margin-top: 10px
+}

@@ -1,0 +1,47 @@
+/* 替换样式 */
+:host ::ng-deep .ui-panelmenu .ui-panelmenu-header.ui-state-active a{
+    background:powderblue;
+    color: #555;
+    font-size: 14px;
+    border:none; 
+}
+:host ::ng-deep .ui-panelmenu .ui-panelmenu-header{
+    background: #fff;
+    
+}
+:host ::ng-deep .ui-state-default{
+    border: none;
+}
+:host ::ng-deep .ui-panelmenu .ui-panelmenu-header a {
+    color: #555;
+    font-size: 14px;
+}
+:host ::ng-deep .ui-panelmenu .ui-panelmenu-panel{
+    border:none;
+}
+:host ::ng-deep  .ui-panelmenu .ui-panelmenu-panel:last-child{
+    border: none;
+}
+:host ::ng-deep .ui-panelmenu .ui-panelmenu-content{
+    background:#f5f5f5;
+    color:#555;
+}
+:host ::ng-deep  .ui-widget-content{
+    border:none;
+}
+:host ::ng-deep  .ui-panelmenu .ui-panelmenu-content .ui-menuitem-link{
+    color: #555;
+    font-size: 14px;
+    margin: 6px 0px;
+    /* border-bottom: 1px solid rgb(0,0,0); */
+}
+:host ::ng-deep  .pi{
+    color:#007AFF;
+}
+:host ::ng-deep .ui-panelmenu .ui-panelmenu-header{
+    margin: 0px;
+}
+/* 定义高亮显示 */
+:host ::ng-deep .higelight-menu{
+    background: palegreen;
+}

@@ -1,0 +1,13 @@
+button{
+    margin: 20px;
+}
+
+.messages-info {
+    min-height: 300px;
+    background-color: #7fbcec;
+    border: 0 none;
+    color: #212121;
+}
+:host ::ng-deep  .ui-organizationchart .ui-organizationchart-node-content{
+    cursor: pointer;
+}

@@ -1,0 +1,103 @@
+.header-container{
+    background: #f5f5f5;
+    color: palevioletred;
+}
+.msg{
+    height: 50px;
+    border-bottom: 1px solid powderblue;
+}
+.body-container{
+    height: 100%;
+    display: flex;
+    /* min-height: 900px; */
+    position: relative;
+}
+.left-container{
+    flex: 1;
+    height: 100%;
+    background: #f5f5f5;
+    min-height: 900px;
+    max-width: 240px;
+}
+.left{
+    display:none;
+}
+.right{
+    left: 0px !important;
+}
+.show-icon{
+    position: absolute;
+    left: 210px;
+    /* z-index: 4000; */
+    top:1px;
+    cursor: pointer;
+}
+.main-container{
+    flex: 8;
+    /* height: 900px; */
+    max-height: 800px;
+    overflow-y: auto; 
+}
+.title{
+   
+    animation:myfirst 8s infinite linear;
+    /* animation-direction:alternate; */
+    -moz-animation:myfirst 8s infinite linear; /* Firefox */
+    -webkit-animation:myfirst 8s infinite linear; /* Safari and Chrome */
+    -o-animation:myfirst 8s infinite linear; /* Opera */
+    
+}
+.info{
+    padding-left: 44px;
+    font-size: 14px;
+    border-bottom: 1px solid powderblue;
+    color:#007AFF;
+    display: flex;
+    align-items: center;
+    height: 32px;
+    line-height: 32px;
+}
+
+@keyframes myfirst
+{
+    0%   {color:red;}
+    25%  {color:orange;}
+    45%  {color:yellow;}
+    50%  {color:green;}
+    75% {color:blue;}
+    90% {color:indigo;}
+    100% {color:purple;}
+}
+
+@-moz-keyframes myfirst /* Firefox */
+{
+    0%   {color:red;}
+    25%  {color:orange;}
+    45%  {color:yellow;}
+    50%  {color:green;}
+    75% {color:blue;}
+    90% {color:indigo;}
+    100% {color:purple;}
+}
+
+@-webkit-keyframes myfirst /* Safari and Chrome */
+{
+    0%   {color:red;}
+    25%  {color:orange;}
+    45%  {color:yellow;}
+    50%  {color:green;}
+    75% {color:blue;}
+    90% {color:indigo;}
+    100% {color:purple;}
+}
+
+@-o-keyframes myfirst /* Opera */
+{
+    0%   {color:red;}
+    25%  {color:orange;}
+    45%  {color:yellow;}
+    50%  {color:green;}
+    75% {color:blue;}
+    90% {color:indigo;}
+    100% {color:purple;}
+}

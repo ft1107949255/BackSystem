@@ -1,0 +1,121 @@
+:host ::ng-deep .ng-star-inserted{
+    text-align: center
+}
+:host ::ng-deep .ui-table .ui-table-tbody > tr.ui-state-highlight{
+    background-color: rgb(247, 235, 235);
+    color: rgb(17, 0, 0);
+}
+:host ::ng-deep .ui-table .ui-table-tbody > tr.ui-contextmenu-selected{
+    background-color: rgb(247, 235, 235);
+    color: rgb(17, 0, 0);
+}
+:host ::ng-deep table{
+    font-size: 12px;
+}
+:host ::ng-deep .ui-table .ui-table-tbody>tr>td, .ui-table .ui-table-tfoot>tr>td{
+    padding: .54em .5em;
+    font-size: 12px;
+}
+:host ::ng-deep .ui-multiselect .ui-multiselect-label{
+    font-size: 13px;
+    font-weight: normal;
+
+}
+:host ::ng-deep .ui-state-highlight{
+    background: none;
+    color: black;
+    font-size: 14px;
+}
+:host ::ng-deep .ui-chkbox-box.ui-state-active, :host ::ng-deep .ui-radiobutton-box.ui-state-active{
+    background: palegreen;
+
+}
+:host ::ng-deep .ui-menu-list .ng-star-inserted{
+    text-align: left;
+    font-size: 14px;
+    margin: 4px 0px;
+}
+button{
+    margin-left: 10px;
+    font-size: 12px;
+}
+:host ::ng-deep .ui-button-danger{
+    background: red;
+    color: white;
+}
+:host ::ng-deep .ui-toast-message{
+    background: palegreen;
+}
+:host ::ng-deep .ui-toast-message button{
+    font-size: 12px;
+    height: 30px;
+}
+:host ::ng-deep .ui-dialog .ng-star-inserted{
+    text-align: left;
+    margin: 10px;
+    font-size: 12px;
+}
+:host ::ng-deep .ui-dialog .ui-dialog-content{
+    padding: 0px;
+}
+:host ::ng-deep .ui-dialog  .ui-dialog-title{
+    margin: 0px;
+}
+:host ::ng-deep .ui-dialog .ui-widget-header{
+    background: plum;
+    margin: 0px;
+    height: 40px;
+    line-height: 40px;
+    /* display: flex; */
+    /* align-items: center; */
+}
+:host ::ng-deep .ui-dialog.ui-widget .ui-dialog-titlebar{
+    padding: 0px;
+}
+:host ::ng-deep .ui-dialog{
+    cursor: move
+}
+:host ::ng-deep .ui-dialog-mask{
+    z-index: 4001;
+}
+.form_div{
+    margin: 20px 0px;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    text-align: left;
+    padding-left: 20px;
+}
+.form_div span{
+    text-align:justify;
+   
+}
+.btn-primary{
+    background-color: plum;
+}
+.btn{
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.428571429;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+.color{
+    color: plum;
+}
+/* :host ::ng-deep .pi{
+    display: none ;
+} */

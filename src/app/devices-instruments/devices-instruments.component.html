@@ -1,0 +1,20 @@
+<div class="search">
+  <span>设备类型:</span>
+  <p-dropdown [options]="types" [(ngModel)]="selectedtype" placeholder="请选择类型"  [showClear]="true"></p-dropdown>
+  <p-button label="" icon="pi pi-search" iconPos="left"></p-button>
+</div>
+<div class="tab-table">
+  <p-fieldset >
+    <p-header>临床评价指标</p-header>
+    <p-tabMenu [model]="items" [activeItem]="items[0]"></p-tabMenu>
+    <div class="tablelist1" *ngIf='tab1'>
+      <app-table [tablelist] = tablelist1></app-table>
+    </div>
+    <div class="tablelist2" *ngIf='tab2'>
+      <app-table [tablelist] = tablelist2></app-table>
+    </div>
+    <div class="tablelist3" *ngIf='tab3'>
+      <app-table [tablelist] = tablelist3></app-table>
+    </div>
+  </p-fieldset>
+</div>

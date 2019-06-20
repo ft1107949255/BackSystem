@@ -1,0 +1,80 @@
+<p-table #dt [value]="tablelist.body" [columns]="selectedColumns" [paginator]="true" [rows]="15"
+    [(selection)]="selectedList" dataKey="name" [contextMenu]="cm" [(contextMenuSelection)]="selectedColumndata"
+    [scrollable]="true" scrollHeight="500px" selectionMode="multiple">
+    <ng-template pTemplate="caption">
+        <div style="text-align:left" style="display: flex; align-items:center;">
+            <p-multiSelect [options]="tablelist.header" [(ngModel)]="selectedColumns" optionLabel="value"
+                selectedItemsLabel="{0}个字段被选中" [style]="{minWidth: '200px'}" defaultLabel="选择查看的字段">
+            </p-multiSelect>
+            <button type="button" pButton (click)="delAll()" label="删除选中"
+                class="ui-button-raised ui-button-danger"></button>
+            <button type="button" pButton  label="导出数据" (click)="dt.exportCSV()"
+                style="float:left"></button>
+        </div>
+    </ng-template>
+    <ng-template pTemplate="header" let-columns>
+        <tr>
+            <th style="width: 3em">
+                <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+            </th>
+            <th *ngFor="let item of columns" [pSortableColumn]="item.field">{{item.value}}<p-sortIcon
+                    [field]="item.field" ariaLabel="Activate to sort"
+                    ariaLabelDesc="Activate to sort in descending order"
+                    ariaLabelAsc="Activate to sort in ascending order"></p-sortIcon>
+            </th>
+
+        </tr>
+        <!-- <tr>
+             <th style="width: 3em">
+                /
+            </th> 
+             <th *ngFor="let label of columns" [ngSwitch]="label.label" class="ui-fluid">
+                 {{label.label}}
+                <input pInputText type="text" (input)="dt2.filter($event.target.value, label.label, label.filterMatchMode)"
+                    [value]="dt2.filters[label.label]?.value">
+            </th>
+        </tr> -->
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-columns="columns">
+        <tr [pSelectableRow]="rowData" [pContextMenuRow]="rowData">
+            <td style="width: 3em">
+                <p-tableCheckbox [value]="rowData"></p-tableCheckbox>
+            </td>
+            <td *ngFor="let label of columns"> {{rowData[label.field]}}</td>
+        </tr>
+    </ng-template>
+    <!-- <ng-template pTemplate="summary">
+        <ul>
+            <li *ngFor="let item of tablelist.body" style="text-align: left">
+                {{item.name }}
+            </li>
+        </ul>
+    </ng-template> -->
+
+</p-table>
+<p-contextMenu #cm [model]="items"></p-contextMenu>
+<p-toast position="center" key="c" (onClose)="onReject()" [modal]="true" [baseZIndex]="5000">
+    <ng-template let-message pTemplate="message">
+        <div style="text-align: center">
+            <i class="pi pi-exclamation-triangle" style="font-size: 3em"></i>
+            <h3>{{message.summary}}</h3>
+            <p>{{message.detail}}</p>
+        </div>
+        <div class="ui-g ui-fluid">
+            <div class="ui-g-6">
+                <button type="button" pButton (click)="onConfirm()" label="确认" class="ui-button-success"></button>
+            </div>
+            <div class="ui-g-6">
+                <button type="button" pButton (click)="onReject()" label="取消" class="ui-button-secondary"></button>
+            </div>
+        </div>
+    </ng-template>
+</p-toast>
+<p-dialog header="Title" [(visible)]="display" [modal]="true" [baseZIndex]="10000" [responsive]="true"
+    [style]="{width: '300px', minHeight: '300px'}">
+    <div *ngIf='selectedColumndata'>
+        <div *ngFor='let item of tablelist.header'>
+            <span>{{item['value']}}: {{selectedColumndata[item['field']] ?selectedColumndata[item['field']] :''}}</span>
+        </div>
+    </div>
+</p-dialog>

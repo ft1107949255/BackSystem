@@ -1,0 +1,40 @@
+<link rel="stylesheet" type="text/css" href="../../assets/css/login.css">
+<div id="login">
+  <div class="wrapper">
+    <div class="login">
+      <form  class="container offset1 loginform" #heroForm="ngForm">
+        <div id="owl-login" class="{{class}}">
+          <div class="hand"></div>
+          <div class="hand hand-r"></div>
+          <div class="arms">
+            <div class="arm"></div>
+            <div class="arm arm-r"></div>
+          </div>
+        </div>
+        <div class="pad">
+          <input type="hidden" name="_csrf" value="9IAtUxV2CatyxHiK2LxzOsT6wtBE6h8BpzOmk=">
+          <div class="control-group">
+            <div class="controls">
+              <label for="text" class="control-label fa fa-user"></label>
+              <input type="text" pInputText placeholder="Username" class="form-control input-medium" required 
+                [(ngModel)]="username" (ngModelChange)="username=$event" name="username">
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="controls">
+              <label for="password" class="control-label fa fa-key"></label>
+              <input id="password" type="password" name="password" placeholder="Password" tabindex="2"
+                class="form-control input-medium" (click)='clickinput()' (blur)='blurinput()' required  [(ngModel)]="password" (ngModelChange)="password=$event" name="password">
+            </div>
+          </div>
+        </div>
+        <div class="form-actions">
+          <!-- <a href="#" tabindex="5" class="btn pull-left btn-link text-muted">Forgot password?</a><a href="#" tabindex="6" class="btn btn-link text-muted">Sign Up</a> -->
+          <span class="btn pull-left btn-link text-muted" style="color: red;">{{msg}}</span>
+
+          <button type="submit" tabindex="4" class="btn btn-primary" (click)='submit()'>Login</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

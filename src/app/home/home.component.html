@@ -1,0 +1,45 @@
+<!-- header side -->
+<div ng-app=''>
+  <div class="header-container">
+    <app-header [title]='title' (backMsg)='checkBackMsg($event)'></app-header>
+  </div>
+  <div class="msg">
+
+  </div>
+
+  <!-- body -->
+  <div class="body-container">
+    <div class="pi {{icon_class}} show-icon  {{newClass}}" style="width: 30px; height:30px;background: palegreen; text-align: center; line-height: 30px;" (click)='changeicon()'>
+      <i  style="color:blue; font-size: 15px;" title="展开/收缩" ></i>
+      </div>
+
+    <!-- left side -->
+    <div class="left-container {{left}}">
+      <app-menu (backPage)='checkPage($event)'></app-menu>
+      
+    </div>
+
+    <!-- right container -->
+    <div class="main-container">
+      <div class="info">
+        <span class="pi {{class}}">{{title}}</span> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class="title"> <i class="pi pi-spin pi-volume-up"></i><span>你好，欢迎使用本系统~~~~~~~~~~~~~</span></div>
+      </div>
+      <!-- //显示的信息 -->
+      <app-index *ngIf='showList.index' ></app-index>
+      <!-- 显示专家信息 -->
+      <app-doctor *ngIf='showList.doctor' ></app-doctor>
+      <!-- 显示仪器问卷调查 -->
+      <app-devices-instruments *ngIf='showList.devices'></app-devices-instruments>
+      <!-- 显示产后心理 -->
+      <app-postpartum-psychology *ngIf='showList.postpartum'> </app-postpartum-psychology>
+      <!-- 服务体系表单 -->
+      <app-service *ngIf='showList.service'></app-service>
+      <!-- 用户管理 -->
+      <app-users *ngIf='showList.users'></app-users>
+      <!-- 修改密码 -->
+      <app-update-password *ngIf='showList.updatePassword'></app-update-password>
+      <!-- 政策推荐 -->
+      <app-article *ngIf='showList.article'></app-article>
+    </div>
+  </div>
+</div>

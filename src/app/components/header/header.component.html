@@ -1,0 +1,34 @@
+<div class="header">
+  <div class="info">仪器评价网后台系统</div>
+  <div class="user-info">
+      <a><img src="../../../assets/images/user.jpg" width="40"/></a>
+      <div class="user-div">admin <i class="pi pi-chevron-down"></i>
+        <div class="user-list">
+            <p-menu [model]="items" [style]="{'width':'100px','height':'100px'}"></p-menu>
+        </div>
+      </div> 
+  </div>
+</div>
+
+<p-dialog header="修改密码" [(visible)]="display" [modal]="true" [baseZIndex]="10000" [responsive]="true"
+  [style]="{width: '340px', minHeight: '300px'}">
+  <form #heroForm="ngForm">
+    <div class="form_div">
+      <span>原始密码 :</span><input type="text" pInputText placeholder="用户名" class="form-control input-medium" required
+        [(ngModel)]="oldPwd" (ngModelChange)="oldPwd=$event" name="oldPwd">
+        <i class="pi pi-times color" *ngIf='oldPwdShow' ></i>
+    </div>
+    <div class="form_div">
+      <span>新的密码 :</span><input type="password" pInputText placeholder="密码" class="form-control input-medium" required
+        [(ngModel)]="newPwd" (ngModelChange)="newPwd=$event" name="newPwd">
+        <i class="pi pi-times color" *ngIf='newPwdShow'></i>
+    </div>
+    <div class="form_div">
+      <span>确认密码 :</span><input type="password" pInputText placeholder="邮箱" class="form-control input-medium" required
+        [(ngModel)]="checkNewPwd" (ngModelChange)="checkNewPwd=$event" name="checkNewPwd">
+        <i class="pi pi-times color" *ngIf='checkNewPwdShow'></i>
+        <span class="error" *ngIf='errorPwdShow'>密码不一致</span>
+    </div>
+    <button type="submit" tabindex="4" class="btn btn-primary" (click)='submit()'>提交</button>
+  </form>
+</p-dialog>

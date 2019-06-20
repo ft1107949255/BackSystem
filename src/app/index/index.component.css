@@ -1,0 +1,8 @@
+.indexContainer{
+    display: flex;
+    align-items: center;
+    margin: 40px 0px;
+}
+.indexContainer div{
+    flex: 1;
+}
